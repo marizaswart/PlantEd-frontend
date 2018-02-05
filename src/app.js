@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import {
   Router,
@@ -20,7 +20,7 @@ import SignIn from './containers/SignIn';
 import Container from './components/Container';
 import GlobalComponents from './components/GlobalComponents';
 
-class App extends React.Component {
+class App extends Component {
   static propTypes = {
     children: PropTypes.node,
   };
@@ -88,23 +88,6 @@ export function initialize({ apiUrl, cookies, isServer, currentLocation, userAge
   return store.dispatch(configure([
     {
       default: { apiUrl }
-    }, {
-      evilUser: {
-        apiUrl,
-        signOutPath: '/mangs/sign_out',
-        emailSignInPath: '/mangs/sign_in',
-        emailRegistrationPath: '/mangs',
-        accountUpdatePath: '/mangs',
-        accountDeletePath: '/mangs',
-        passwordResetPath: '/mangs/password',
-        passwordUpdatePath: '/mangs/password',
-        tokenValidationPath: '/mangs/validate_token',
-        authProviderPaths: {
-          github: '/mangs/github',
-          facebook: '/mangs/facebook',
-          google: '/mangs/google_oauth2'
-        }
-      }
     }
   ], {
     cookies,
