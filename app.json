@@ -1,0 +1,20 @@
+{
+  "name": "PlantEd",
+  "description": "Craft Academy Final Project",
+  "repository": "https://github.com/craftacademy/PlantEd-frontend",
+  "keywords": ["Craft Academy", "final project", "react", "rails"],
+  "env": {
+    "NODE_ENV": {
+      "description": "Disable debug + hot reload for production.",
+      "value": "production"
+    },
+    "NODE_PATH": {
+      "description": "The root for absolute import statements.",
+      "value": "./src"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "description": "Allow webpack to run the build on deploy.",
+      "value": "false"
+    }
+  }
+}
