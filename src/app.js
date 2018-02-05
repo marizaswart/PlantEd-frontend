@@ -70,11 +70,6 @@ export function initialize({ apiUrl, cookies, isServer, currentLocation, userAge
       <Route path="/" component={App}>
         <IndexRoute component={Main} />
         <Route path="login" component={SignIn} />
-        {/*<Route*/}
-          {/*onEnter={requireAuth.bind(this, store)}*/}
-          {/*component={Account}*/}
-          {/*path="account"*/}
-        {/*/>*/}
         <Route onEnter={requireAuth.bind(this, store)}
         component={MyPlants}
         path="myplants"/>

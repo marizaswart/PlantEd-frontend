@@ -18,9 +18,6 @@ class Container extends Component {
             <LinkContainer to="/" onlyActiveOnIndex>
               <NavItem eventKey={1}>Home</NavItem>
             </LinkContainer>
-            {/*<LinkContainer to="/account">*/}
-              {/*<NavItem eventKey={2}>Account</NavItem>*/}
-            {/*</LinkContainer>*/}
             <LinkContainer to="/myplants">
               <NavItem eventKey={2}>My Plants</NavItem>
             </LinkContainer>
