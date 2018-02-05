@@ -14,7 +14,6 @@ import demoButtons from './reducers/request-test-buttons';
 import demoUi from './reducers/demo-ui';
 import thunk from 'redux-thunk';
 import Main from './containers/Main';
-import Account from './containers/Account';
 import MyPlants from './containers/MyPlants';
 import SignIn from './containers/SignIn';
 import Container from './components/Container';

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class AddPlant extends Component {
     constructor() {
       super();
@@ -7,7 +8,7 @@ class AddPlant extends Component {
     }
 
     componentDidMount() {
-        getPlants().then(data => {
+        apiUrl().then(data => {
             this.setState({plants: data.entity.data})
         })
     }

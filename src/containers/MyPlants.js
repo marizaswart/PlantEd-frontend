@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import { PageHeader } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { AddPlant } from './components/AddPlant';
+import AddPlant from '../components/AddPlant';
 import { browserHistory } from 'react-router';
-
+import { SignOutButton } from 'redux-auth/bootstrap-theme';
 
 class MyPlants extends Component {
   render() {

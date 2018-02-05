@@ -3,7 +3,6 @@ import {PageHeader} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {EmailSignInForm} from 'redux-auth/bootstrap-theme';
 import {browserHistory} from 'react-router';
-import MyPlants from './containers/MyPlants';
 
 
 class SignIn extends Component {
@@ -12,7 +11,7 @@ class SignIn extends Component {
       <div>
         <PageHeader>Sign In First</PageHeader>
         <p>Unauthenticated users cant access this page.</p>
-        <EmailSignInForm next={() => browserHistory.push('/myplants')}/>
+        <EmailSignInForm next={() => browserHistory.push('myplants')}/>
       </div>
     );
   }
