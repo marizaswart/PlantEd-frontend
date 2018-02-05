@@ -10,7 +10,7 @@ class SignIn extends Component {
       <div>
         <PageHeader>Sign In First</PageHeader>
         <p>Unauthenticated users can't access this page.</p>
-        <EmailSignInForm next={() => browserHistory.push('/account')}/>
+        <EmailSignInForm next={() => browserHistory.push('/myplants')}/>
       </div>
     );
   }

@@ -23,9 +23,9 @@ class Main extends Component {
     currentUserEndpoint: PropTypes.string,
   };
 
-  updateTheme({ value }) {
-    this.props.dispatch(updateDemoTheme(value));
-  }
+   updateTheme({ value }) {
+     this.props.dispatch(updateDemoTheme(value));
+   }
 
   updateEndpoint({ value }) {
     this.props.dispatch(updateDemoEndpoint(value));
@@ -48,7 +48,7 @@ class Main extends Component {
         themePath = '/default-theme';
         break;
       default:
-        Theme = MUITheme;
+         Theme = MUITheme;
         themePath = '/material-ui-theme';
         break;
     }
@@ -63,7 +63,7 @@ class Main extends Component {
           <IndexPanel header="Email Sign In">
             <ExampleWell>
               <Theme.EmailSignInForm
-                next={() => browserHistory.push('/account')}
+                next={() => browserHistory.push('/myplants')}
                 endpoint={this.props.pageEndpoint}
               />
             </ExampleWell>

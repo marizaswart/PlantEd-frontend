@@ -70,14 +70,14 @@ export function initialize({ apiUrl, cookies, isServer, currentLocation, userAge
       <Route path="/" component={App}>
         <IndexRoute component={Main} />
         <Route path="login" component={SignIn} />
-        <Route
-          onEnter={requireAuth.bind(this, store)}
-          component={Account}
-          path="account"
-        />
+        {/*<Route*/}
+          {/*onEnter={requireAuth.bind(this, store)}*/}
+          {/*component={Account}*/}
+          {/*path="account"*/}
+        {/*/>*/}
         <Route onEnter={requireAuth.bind(this, store)}
         component={MyPlants}
-        path="plants"/>
+        path="myplants"/>
       </Route>
     </Router>
   );
@@ -94,7 +94,7 @@ export function initialize({ apiUrl, cookies, isServer, currentLocation, userAge
     isServer,
     currentLocation
   })).then(({ redirectPath, blank } = {}) => {
-    // hack for material-ui server-side rendering.
+     // hack for material-ui server-side rendering.
     // see https://github.com/callemall/material-ui/pull/2007
     if (userAgent) {
       global.navigator = { userAgent };
