@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import { connect } from 'react-redux';
-import { dismissRequestTestErrorModal } from '../actions/request-test-buttons';
+import React, {Component, PropTypes} from 'react';
+import {Modal, Button} from 'react-bootstrap';
+import {connect} from 'react-redux';
+import {dismissRequestTestErrorModal} from '../actions/request-test-buttons';
 
-class RequestTestErrorModal extends React.Component {
+class RequestTestErrorModal extends Component {
   static propTypes = {
     show: PropTypes.bool,
     url: PropTypes.string,
@@ -44,7 +44,7 @@ class RequestTestErrorModal extends React.Component {
   }
 }
 
-export default connect(({ demoButtons }) => ({
+export default connect(({demoButtons}) => ({
   show: demoButtons.get('showErrorModal'),
   url: demoButtons.get('lastRequestUrl')
 }))(RequestTestErrorModal);

@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Panel } from 'react-bootstrap';
 
-class ExampleWell extends React.Component {
+class ExampleWell extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired
   }

@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Panel, Col } from 'react-bootstrap';
 
-class IndexPanel extends React.Component {
+class IndexPanel extends Component {
   static propTypes = {
     bsStyle: PropTypes.string,
     header: PropTypes.string,
