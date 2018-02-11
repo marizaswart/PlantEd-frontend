@@ -51,6 +51,13 @@ class App extends Component {
         }
 
         EventEmitter.subscribe('authenticate.update', this.updateAuthState.bind(this));
+        EventEmitter.subscribe('frequency.updated', this.flash.bind(this, 'Frequency has been added!'));
+    }
+
+    flash(text){
+        EventEmitter.unsubscribe('frequency.updated', null);
+        toast(text, {autoClose: 8000});
+        EventEmitter.subscribe('frequency.updated', this.flash.bind(this, 'Frequency has been added!'));
     }
 
     updateAuthState() {

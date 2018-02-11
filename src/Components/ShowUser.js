@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import {getUser} from '../Modules/User';
+import {updatePlant} from '../Modules/Plants'
+import {Input, Button} from 'reactstrap'
 import EventEmitter from '../Modules/EventEmitter';
 
 class ShowUser extends Component {
     constructor() {
         super();
-        this.state = {user: [], isLoading: true,
-        }
+        this.state = {user: [], isLoading: true, chosenFrequency: ''}
     }
 
     componentWillMount() {
@@ -24,23 +25,46 @@ class ShowUser extends Component {
         })
     }
 
+    handleFrequencyInput(event) {
+        this.setState({chosenFrequency: event.target.value})
+    }
+
+    addFrequency(plant) {
+        updatePlant(plant, this.state.chosenFrequency).then((response) => {
+            console.log(response);
+            EventEmitter.publish('frequency.updated', null);
+            this.setState({chosenFrequency: ''})
+        })
+
+    }
+
 
     render() {
 
         const user = this.state.user;
 
+
         if (this.state.isLoading) {
             return <div>Loading</div>
         } else {
             const plantList = user.relationships.plants.data.map(plant => {
+                let frequency;
+                if (plant.frequency) {
+                    frequency = <p>Watering frequency: every {plant.frequency} days</p>
+
+                } else {
+                    frequency = <p>Watering frequency not set up yet</p>
+                }
+
                 return (
-                    <div className="card">
-                        {/*<p>{plant.image}</p>*/}
-                        <div>
-                            <h5>{plant.name}</h5>
-                            <p>{plant.description}</p>
-                        </div>
-                    </div>
+                    <li key={plant.id} className={'no-bullets'} value="plant">
+                        <h4>{plant.plant.name}</h4>
+                        <p>{plant.plant.description}</p>
+                        {frequency}
+                        <Input placeholder={plant.frequency ? 'Change frequency' : 'Add frequency'} onChange={this.handleFrequencyInput.bind(this)}/>
+                        <Button onClick={this.addFrequency.bind(this, plant)}>Add</Button>
+                    </li>
+
                 )
             });
             return (

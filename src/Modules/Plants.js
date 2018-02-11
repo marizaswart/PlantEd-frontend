@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import {apiUrl, storeAuthHeaders, getAuthHeaders} from './Auth'
+import {apiUrl, getAuthHeaders} from './Auth'
 
 const getPlants = () => {
     const path = apiUrl + '/plants';
@@ -27,4 +27,18 @@ const getPlant = (plant) => {
     })
 };
 
-export {getPlants, getPlant}
+const updatePlant = (plant, frequency) => {
+    const current_user = JSON.parse(sessionStorage.getItem('current_user'));
+    const path = apiUrl + `/users/${current_user.id}/user_plants/${plant.id}`;
+    return new Promise((resolve, reject) => {
+        axios.put(path, {frequency: frequency},  {headers: getAuthHeaders()})
+            .then(response => {
+                resolve(response.data)
+            })
+            .catch(error => {
+                reject(error)
+            });
+    })
+};
+
+export {getPlants, getPlant, updatePlant}
