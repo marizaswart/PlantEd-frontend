@@ -57,14 +57,15 @@ class ShowUser extends Component {
                 }
 
                 return (
-                    <li key={plant.id} className={'no-bullets'} value="plant">
-                        <h4>{plant.plant.name}</h4>
-                        <p>{plant.plant.description}</p>
-                        {frequency}
-                        <Input placeholder={plant.frequency ? 'Change frequency' : 'Add frequency'} onChange={this.handleFrequencyInput.bind(this)}/>
-                        <Button onClick={this.addFrequency.bind(this, plant)}>Add</Button>
-                    </li>
-
+                    <div className="card" id="card">
+                        <div key={plant.id} value="plant">
+                            <h4>{plant.plant.name}</h4>
+                            <p>{plant.plant.description}</p>
+                            {frequency}
+                            <Input placeholder={plant.frequency ? 'Change frequency' : 'Add frequency'} onChange={this.handleFrequencyInput.bind(this)}/>
+                            <Button onClick={this.addFrequency.bind(this, plant)} id="addfrequency">Add</Button>
+                        </div>
+                    </div>
                 )
             });
             return (
