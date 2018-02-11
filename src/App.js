@@ -4,13 +4,13 @@ import AddPlant from './Components/AddPlant';
 import ShowUser from './Components/ShowUser'
 import Login from './Components/LoginPage';
 import {ToastContainer, toast} from 'react-toastify'
-import {Jumbotron, Container, Row, Col, Button} from 'reactstrap';
+import {Jumbotron, Container, Button} from 'reactstrap';
 import ActionCable from 'actioncable'
 
 import './App.css';
 import {deAuthenticate} from "./Modules/Auth";
 
- const cable = ActionCable.createConsumer("ws://localhost:3001/cable");
+ const cable = ActionCable.createConsumer("wss://planted-api.herokuapp.com/cable");
 
 
 class App extends Component {
