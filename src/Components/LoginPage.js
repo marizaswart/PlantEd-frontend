@@ -45,14 +45,14 @@ class Login extends Component {
                     <FormGroup>
                         <Label for="exampleEmail">Email</Label>
                         <Input type="email" name="email" id="exampleEmail"
-                               placeholder="with a placeholder"
+                               placeholder="email"
                                value={this.state.email}
                                onChange={(e) => this.setState( {email: e.target.value})}/>
                     </FormGroup>
                     <FormGroup>
                         <Label for="examplePassword">Password</Label>
                         <Input type="password" name="password" id="examplePassword"
-                               placeholder="password placeholder"
+                               placeholder="password"
                                value={this.state.password}
                                onChange={(e) => this.setState( {password: e.target.value})}/>
                     </FormGroup>
@@ -65,21 +65,21 @@ class Login extends Component {
                     <FormGroup>
                         <Label for="exampleEmail">Email</Label>
                         <Input type="email" name="email" id="exampleEmail"
-                               placeholder="with a placeholder"
+                               placeholder="email"
                                value={this.state.email}
                                onChange={(e) => this.setState( {email: e.target.value})}/>
                     </FormGroup>
                     <FormGroup>
                         <Label for="examplePassword">Password</Label>
                         <Input type="password" name="password" id="examplePassword"
-                               placeholder="password placeholder"
+                               placeholder="password"
                                value={this.state.password}
                                onChange={(e) => this.setState( {password: e.target.value})}/>
                     </FormGroup>
                     <FormGroup>
                         <Label for="examplePasswordConfirmation">Password Confirmation</Label>
                         <Input type="password" name="password-confirmation" id="examplePasswordConfirmation"
-                               placeholder="password confirmation placeholder"
+                               placeholder="password confirmation"
                                value={this.state.password.confirmation}
                                onChange={(e) => this.setState( {password: e.target.value})}/>
                     </FormGroup>
